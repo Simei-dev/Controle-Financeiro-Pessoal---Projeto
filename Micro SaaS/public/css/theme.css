@@ -1,0 +1,198 @@
+/* ==============================
+   VARIÁVEIS GLOBAIS
+============================== */
+
+:root {
+
+    --bg-gradient: linear-gradient(135deg, #d6dddf, #ececec, #d6dddf);
+    --text-color: #111827;
+
+    --text-primary: #111827;
+    --text-secondary: #374050;
+    --text-muted: #687380;
+
+    --card-bg: #ffffff;
+    --table-header: #f1f5f9;
+    --table-row-alt: #f9fafb;
+
+    --shadow-soft: 0 8px 25px rgba(0, 0, 0, 0.06);
+
+    --balance-gradient: linear-gradient(135deg, #3b8be7, #27bbaf);
+    --shadow-balance: 0 12px 30px rgba(20, 184, 166, 0.25);
+
+    --income-border: rgba(34, 197, 94, 0.25);
+    --income-glow: 0 0 0 4px rgba(34, 197, 94, 0.08),
+        0 8px 25px rgba(0, 0, 0, 0.05);
+
+    --expense-border: rgba(239, 68, 68, 0.25);
+    --expense-glow: 0 0 0 4px rgba(239, 68, 68, 0.08),
+        0 8px 25px rgba(0, 0, 0, 0.05);
+
+    --income-color: #16a34a;
+    --expense-color: #dc2626;
+
+    --bordersl: #e8f0f3;
+    --btn-white-bg: #ffffff;
+    --btn-white-text: #000000;
+    --btn-white-border: #000000;
+    --btn-white-hover: #f8fafc;
+
+    --btn-blue-gradient: linear-gradient(135deg, #3b82f6, #2563eb);
+    --btn-blue-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
+
+    /* ===== HEADER ===== */
+    --header-bg: linear-gradient(135deg, #3b8be7, #27bbaf);
+
+    --header-border: #e5e7eb;
+
+    --menu-text: #ffffff;
+
+    --hovericonb: #eff6ff;
+    --hovericonr: #fef2f2;
+    --hoverjoia: #b9ffbd;
+
+    --logout-border: #e5e7eb;
+    --logout-hover-bg: #fee2e2;
+    --logout-hover-text: #dc2626;
+    --email: #ffffff;
+
+    /* ===== LOGO ===== */
+
+    --opa: 0.5;
+
+    --logo-gradient: #ffffff;
+    --logo-text-gradient: #ffffff;
+
+    /* ===== PRIMARY ===== */
+
+    --primary-gradient: linear-gradient(135deg, #3b82f6, #14b8a6);
+
+    /* ===== DROPDOWN ===== */
+
+    --dropdown-border: #e5e7eb;
+    --dropdown-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    --dropdown-hover: rgba(0, 0, 0, 0.05);
+
+    /* ===== LIST PAGE ===== */
+
+    --shadow-hover: 0 6px 18px rgba(0, 0, 0, 0.08);
+
+    --income-bg-soft: #dcfce7;
+    --income-text: #166534;
+
+    --expense-bg-soft: #fee2e2;
+    --expense-text: #991b1b;
+
+    --input-border: #d1d5db;
+
+    /* ===== MODAL NEW TRANSACTION ===== */
+
+    --modal-bg: #ffffff;
+    --modal-overlay: rgba(0, 0, 0, 0.5);
+    --modal-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+
+    --nt-soft-bg: #f0f0f0;
+    --nt-soft-hover: #dadde2;
+
+    --primary-color: #3b82f6;
+    --success-color: #10b981;
+
+    --success-soft-bg: #ecfdf5;
+    
+}
+
+body.dark-mode {
+
+    /* ===== PAINEL DARK ===== */
+    --bg-gradient: linear-gradient(135deg, #0f172a, #111827, #1e293b);
+    --text-color: #f1f5f9;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+
+    --opa: 0.8;
+    --filtericon: brightness(0) invert(1);
+
+    --card-bg: #1e293b;
+
+    --table-header: #273449;
+    --table-row-alt: #1b2435;
+
+    --hovericonb: #152d58;
+    --hovericonr: #361717;
+    --hoverjoia: #0f360e;
+
+    --shadow-soft: 0 8px 25px rgba(0, 0, 0, 0.5);
+
+    --balance-gradient: linear-gradient(135deg, #2563eb, #0d9488);
+    --shadow-balance: 0 3px 30px rgba(13, 148, 136, 0.4);
+
+    --income-border: rgba(34, 197, 94, 0.5);
+    --income-glow: 0 0 0 4px rgba(34, 197, 94, 0.15),
+        0 8px 25px rgba(0, 0, 0, 0.4);
+
+    --expense-border: rgba(239, 68, 68, 0.5);
+    --expense-glow: 0 0 0 4px rgba(239, 68, 68, 0.15),
+        0 8px 25px rgba(0, 0, 0, 0.4);
+
+    --income-color: #4ade80;
+    --expense-color: #f87171;
+
+    --btn-white-bg: #1e293b;
+    --btn-white-text: #f1f5f9;
+    --btn-white-border: #334155;
+    --btn-white-hover: #273449;
+
+    --btn-blue-gradient: linear-gradient(135deg, #2563eb, #1d4ed8);
+    --btn-blue-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+
+    /* ===== HEADER DARK ===== */
+
+    --header-bg: #1e293b;
+    --header-border: #1e293b;
+    --email: #8b94a5;
+    --menu-text: #e2e8f0;
+
+    --logout-border: #334155;
+    --logout-hover-bg: rgba(239, 68, 68, 0.15);
+    --logout-hover-text: #f87171;
+
+    /* ===== LOGO DARK ===== */
+
+    --logo-gradient: linear-gradient(135deg, #2563eb, #0d9488);
+    --logo-text-gradient: linear-gradient(135deg, #60a5fa, #2dd4bf);
+
+    /* ===== PRIMARY DARK ===== */
+
+    --primary-gradient: linear-gradient(135deg, #2563eb, #0d9488);
+
+    /* ===== DROPDOWN DARK ===== */
+
+    --dropdown-border: #334155;
+    --dropdown-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    --dropdown-hover: rgba(255, 255, 255, 0.08);
+
+    --shadow-hover: 0 6px 18px rgba(0, 0, 0, 0.4);
+
+    --income-bg-soft: rgba(34, 197, 94, 0.15);
+    --income-text: #4ade80;
+
+    --expense-bg-soft: rgba(239, 68, 68, 0.15);
+    --expense-text: #f87171;
+
+    --input-border: #334155;
+
+    /* ===== MODAL DARK ===== */
+
+    --modal-bg: #161d2c;
+    --modal-overlay: rgba(0, 0, 0, 0.45);
+    --modal-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+
+    --nt-soft-bg: #1e293b;
+    --nt-soft-hover: #334155;
+
+    --primary-color: #60a5fa;
+    --success-color: #34d399;
+
+    --success-soft-bg: rgba(16, 185, 129, 0.15);
+}

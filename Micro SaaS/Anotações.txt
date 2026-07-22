@@ -1,0 +1,95 @@
+Prompt Banco :
+
+
+CREATE DATABASE micro_saas
+  DEFAULT CHARACTER SET utf8mb4
+  DEFAULT COLLATE utf8mb4_unicode_ci;
+
+USE micro_saas;
+
+-- =========================
+-- USUÁRIOS
+-- =========================
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(150) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL,
+  plan ENUM('free', 'premium') DEFAULT 'free',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- =========================
+-- EMPRESAS
+-- =========================
+CREATE TABLE companies (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(150) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- =========================
+-- RELAÇÃO USUÁRIO x EMPRESA
+-- =========================
+CREATE TABLE company_users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT NOT NULL,
+  company_id INT NOT NULL,
+  role ENUM('owner', 'member') DEFAULT 'owner',
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+  FOREIGN KEY (company_id) REFERENCES companies(id) ON DELETE CASCADE
+);
+
+-- =========================
+-- ENTRADAS (RECEITAS)
+-- =========================
+CREATE TABLE incomes (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  company_id INT NOT NULL,
+  description VARCHAR(255),
+  amount DECIMAL(10,2) NOT NULL,
+  date DATE NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (company_id) REFERENCES companies(id) ON DELETE CASCADE
+);
+
+-- =========================
+-- SAÍDAS (DESPESAS)
+-- =========================
+CREATE TABLE expenses (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  company_id INT NOT NULL,
+  description VARCHAR(255),
+  amount DECIMAL(10,2) NOT NULL,
+  date DATE NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (company_id) REFERENCES companies(id) ON DELETE CASCADE
+);
+
+-- =========================
+-- CONTAS A RECEBER
+-- =========================
+CREATE TABLE receivables (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  company_id INT NOT NULL,
+  client VARCHAR(150),
+  amount DECIMAL(10,2) NOT NULL,
+  due_date DATE NOT NULL,
+  status ENUM('pending', 'paid') DEFAULT 'pending',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (company_id) REFERENCES companies(id) ON DELETE CASCADE
+);
+
+-- =========================
+-- CONTAS A PAGAR
+-- =========================
+CREATE TABLE payables (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  company_id INT NOT NULL,
+  description VARCHAR(255),
+  amount DECIMAL(10,2) NOT NULL,
+  due_date DATE NOT NULL,
+  status ENUM('pending', 'paid') DEFAULT 'pending',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (company_id) REFERENCES companies(id) ON DELETE CASCADE
+);
